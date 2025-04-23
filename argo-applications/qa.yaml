@@ -11,8 +11,8 @@ spec:
     path: application
     targetRevision: HEAD
     helm:
-      valueFiles:
-        - ../envs/qa.yaml
+      valueFiles: 
+      - ../envs/qa.yaml
 
   destination:
     server: https://kubernetes.default.svc
