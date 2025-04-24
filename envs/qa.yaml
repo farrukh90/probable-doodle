@@ -1,1 +1,21 @@
 replicaCount: 1
+
+
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: 
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+  hosts:
+    - host: nginx-qa.projectxconsulting.net
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: 
+   - secretName: nginx-qa-tls
+     hosts:
+       - nginx-qa.projectxconsulting.net
