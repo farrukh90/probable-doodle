@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: us-central1-docker.pkg.dev/terraform-project-382315/artemis/artemis
-  tag: "2.0.0"
+  tag: "1.0.0"
 
 service:
   port: 5000
@@ -16,12 +16,12 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-    - host: artemis-qa.projectxconsulting.net
+    - host: artemis-prod.projectxconsulting.net
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-   - secretName: artemis-qa-tls
+   - secretName: artemis-prod-tls
      hosts:
-       - artemis-qa.projectxconsulting.net
+       - artemis-prod.projectxconsulting.net
        
