@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: us-central1-docker.pkg.dev/terraform-project-382315/artemis/artemis
-  tag: "3.0.0"
+  tag: "9.0.0"
 
 service:
   port: 5000
